@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lyrical Bot</title>
+<style>
+@font-face{font-family:"Pixelify Sans";font-weight:700;font-display:swap;src:url(data:font/woff2;base64,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) format("woff2")}
+:root{--bg:#e9eef3;--fg:#14202b;--muted:#5a6b7b;--card:#fff;--line:#c9d3dd;--accent:#c4601a;--accent-fg:#fff;--dot:rgba(20,32,43,.08);--err:#c0262d;--pixel:"Pixelify Sans","Trebuchet MS",ui-rounded,system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141a;--fg:#e8eef4;--muted:#93a3b3;--card:#18202a;--line:#2b3744;--accent:#e8894a;--accent-fg:#1a0f05;--dot:rgba(255,255,255,.06);--err:#ff7b7f}}
+:root[data-theme="dark"]{--bg:#0f141a;--fg:#e8eef4;--muted:#93a3b3;--card:#18202a;--line:#2b3744;--accent:#e8894a;--accent-fg:#1a0f05;--dot:rgba(255,255,255,.06);--err:#ff7b7f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+h1{font:700 1.7rem/1.2 var(--pixel);margin:0 0 14px}
+label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:4px}
+select,input[type=text],textarea{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
+.frame{display:block;width:min(100%,280px);aspect-ratio:9/16;margin:14px auto 0;background:#000;border-radius:10px;cursor:pointer;touch-action:manipulation}
+.frame.live{outline:3px solid #e5484d;outline-offset:3px}
+.actions{display:flex;gap:10px;margin-top:14px}
+.actions .btn{flex:1;padding:12px 14px;font-weight:700}
+.actions .sing{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.actions .rec.on{background:#e5484d;border-color:#e5484d;color:#fff}
+#recmsg{margin:8px 0 0;color:var(--muted);font-size:.9rem;min-height:1.2em;text-align:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.meta{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:.9rem;color:var(--muted)}
+.bar{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:7px 12px;border-radius:8px;font:inherit;cursor:pointer}
+.btn:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.voice{display:flex;align-items:center;gap:8px;margin:12px 0 0;color:var(--fg)}
+details{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:600}
+details .btn{margin-top:10px}
+details input,details textarea{margin-top:10px}
+#msg{margin:8px 0 0;color:var(--accent);font-size:.9rem;min-height:1.2em}
+.char{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+#charmsg{margin:8px 0 0;color:var(--muted);font-size:.9rem}
+#splash{position:fixed;inset:0;z-index:100;overflow:hidden;display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:env(safe-area-inset-top,0px) 16px env(safe-area-inset-bottom,0px);background:radial-gradient(120% 90% at 50% 100%,#3b0a5c 0%,#14052b 55%,#07010f 100%);color:#fff;font-family:var(--pixel);transition:opacity .6s,transform .6s,filter .6s}
+#splash.out{opacity:0;transform:scale(1.4);filter:blur(8px);pointer-events:none}
+#splash::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(transparent 0 3px,rgba(0,0,0,.2) 3px 4px)}
+.sun{position:absolute;left:50%;bottom:46%;width:min(86vw,440px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:linear-gradient(#ffd34d 8%,#ff7a2f 45%,#ff2d8d 92%);-webkit-mask:linear-gradient(#000,#000) top/100% 50% no-repeat,repeating-linear-gradient(#000 0 14px,transparent 14px 20px) bottom/100% 50% no-repeat;mask:linear-gradient(#000,#000) top/100% 50% no-repeat,repeating-linear-gradient(#000 0 14px,transparent 14px 20px) bottom/100% 50% no-repeat;animation:sun 3s ease-in-out infinite}
+.floor{position:absolute;left:-60%;right:-60%;bottom:-10%;height:62%;background:linear-gradient(#ff2d8d 0 2px,transparent 2px) 0 0/100% 48px,linear-gradient(90deg,#ff2d8d 0 2px,transparent 2px) 0 0/72px 100%;transform:perspective(360px) rotateX(64deg);transform-origin:50% 0;animation:floor .9s linear infinite;-webkit-mask-image:linear-gradient(transparent,#000 45%);mask-image:linear-gradient(transparent,#000 45%)}
+.notes{position:absolute;inset:0;z-index:1;overflow:hidden}
+.note{position:absolute;left:var(--x);bottom:-12%;font-size:var(--s);color:var(--c);opacity:.85;animation:rise var(--d) linear infinite;animation-delay:var(--dl)}
+.hero{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center}
+.welcome{font-size:clamp(1rem,4.5vw,1.4rem);letter-spacing:.45em;color:#fff;text-shadow:0 2px 0 #7a1fff,0 0 12px #7a1fff;text-transform:uppercase;animation:fade 1s .2s both}
+.title{margin:6px 0 0;display:flex;flex-direction:column;align-items:center;font:700 clamp(2.8rem,16vw,6.4rem)/.95 var(--pixel)}
+.title span{display:flex}
+.title i{font-style:normal;display:inline-block;color:#fff;text-shadow:3px 3px 0 #ff2d8d,6px 6px 0 #7a1fff,-2px -2px 0 #25e6ff;animation:drop .8s cubic-bezier(.3,1.6,.5,1) both,wob 1.6s ease-in-out infinite;animation-delay:calc(var(--i)*80ms),calc(var(--i)*80ms + 1s)}
+#t2 i{color:#9be7ff}
+.dance{width:min(50vw,220px);height:auto;box-sizing:border-box;margin:14px 0 6px;padding:10px;background:#07010f;border:3px solid #ff2d8d;border-radius:12px;box-shadow:0 0 26px #ff2d8d99;image-rendering:pixelated;animation:fade .8s 1.1s both,dance .55s ease-in-out 1.1s infinite alternate}
+.tag{margin:4px 0 0;min-height:1.5em;font-size:clamp(.95rem,3.8vw,1.2rem);color:#ffe9a8}
+.startbtn{all:unset;display:inline-block;box-sizing:border-box;cursor:pointer;margin-top:16px;padding:14px 30px;border-radius:6px;background:#ffd34d;color:#1a0536;font:700 1.3rem var(--pixel);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 5px 0 #c4601a,0 0 32px #ffd34d88;animation:fade .6s 1.8s both,pulse 1s 2.4s ease-in-out infinite}
+.startbtn:active{transform:translateY(4px);box-shadow:0 1px 0 #c4601a}
+.startbtn:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.hint{margin-top:12px;font-size:.85rem;opacity:.7}
+@keyframes drop{from{transform:translateY(-120vh) rotate(-40deg) scale(2.2);opacity:0}}
+@keyframes wob{50%{transform:translateY(-8px)}}
+@keyframes dance{from{transform:rotate(-6deg) scale(1,1)}to{transform:rotate(6deg) scale(1.04,.93)}}
+@keyframes pulse{50%{transform:scale(1.07)}}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{to{transform:translateY(-125vh) rotate(40deg)}}
+@keyframes floor{to{background-position:0 48px,0 0}}
+@keyframes sun{50%{transform:translateX(-50%) scale(1.05)}}
+@media (prefers-reduced-motion:reduce){#splash *{animation:none!important}.notes{display:none}}
+[hidden]{display:none!important}
+body{background:radial-gradient(var(--dot) 1.2px,transparent 1.6px) 0 0/22px 22px,var(--bg)}
+.top{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px 16px 4px}
+.top h1{margin:0}
+.logo{width:38px;height:auto;image-rendering:pixelated}
+.app{--fh:calc(min(100vw - 32px,300px)*16/9);display:flex;flex-direction:column;align-items:center;gap:16px;padding:12px 16px 32px}
+.side{display:contents}
+.card{box-sizing:border-box;width:min(100%,420px);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(10,20,30,.08)}
+.card h2,.pick label{display:block;margin:0 0 10px;font:700 .78rem/1 system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card .char,.card .voice,details.card{margin:0}
+.pick{order:1}.stagebox{order:2}.out-card{order:3}.side>.card:not(.pick){order:4}
+.stagebox{display:flex;flex-direction:column;align-items:center;width:calc(var(--fh)*9/16)}
+.frame{width:calc(var(--fh)*9/16);height:var(--fh);margin:0;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.3),0 0 0 1px var(--line)}
+.stagebox .actions,.stagebox .meta{box-sizing:border-box;width:100%}
+.actions .rec::before{content:"";display:inline-block;width:10px;height:10px;margin-right:8px;border-radius:50%;background:#e5484d}
+.actions .rec.on::before{background:#fff}
+.empty{aspect-ratio:9/16;max-height:58vh;margin:0 auto;display:grid;place-items:center;padding:16px;box-sizing:border-box;border:2px dashed var(--line);border-radius:10px;text-align:center;color:var(--muted);font-size:.9rem;line-height:1.45}
+#clipBox video{display:block;width:100%;aspect-ratio:9/16;max-height:58vh;object-fit:contain;background:#000;border-radius:10px}
+#clipBox .row{display:flex;gap:10px;margin-top:12px}
+@media (max-width:819px){.empty{display:none}.out-card:has(#clipBox[hidden]){display:none}}
+@media (min-width:820px){
+  .app{--fh:clamp(420px,calc(100vh - 252px),820px);display:grid;grid-template-columns:320px calc(var(--fh)*9/16);grid-template-rows:auto 1fr;justify-content:center;align-items:start;gap:20px 32px;padding:16px 24px 32px}
+  .side{display:flex;flex-direction:column;gap:16px;grid-column:1;grid-row:1}
+  .stagebox{grid-column:2;grid-row:1/3}
+  .out-card{grid-column:1;grid-row:2}
+  .card{width:100%}
+}
+@media (min-width:1180px){
+  .app{grid-template-columns:320px calc(var(--fh)*9/16) 270px;grid-template-rows:auto}
+  .stagebox{grid-row:1}
+  .out-card{grid-column:3;grid-row:1}
+}
+.row2{display:flex;gap:10px;flex-wrap:wrap}
+.note{margin:0 0 10px;color:var(--muted);font-size:.9rem;line-height:1.4}
+#acctmsg{margin:8px 0 0}#acctmsg:empty{display:none}
+#acct input,dialog input{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
+#acct input{margin-bottom:8px}
+.chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:10px;margin-bottom:12px}
+.tile{position:relative;aspect-ratio:1}
+.tile>button:first-child{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;height:100%;border-radius:10px;background:#000;border:2px solid var(--line);overflow:hidden}
+.tile>button:first-child:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tile.on>button:first-child{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.tile img{display:block;width:100%;height:100%;object-fit:contain}
+.tile .x{all:unset;cursor:pointer;position:absolute;top:-7px;right:-7px;width:20px;height:20px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--fg);font:700 14px/19px system-ui,sans-serif;text-align:center}
+.tile .x:hover,.tile .x:focus-visible{background:var(--err);color:#fff;border-color:var(--err)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-fg);font-weight:700}
+.btn.danger{background:var(--err);border-color:var(--err);color:#fff;font-weight:700}
+dialog{box-sizing:border-box;width:min(92vw,380px);padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--fg)}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog h3{margin:0 0 12px;font:700 1.3rem/1.2 var(--pixel)}
+dialog label{display:block;margin:0 0 10px;color:var(--fg);font-size:.9rem}
+dialog label input{margin-top:4px}
+.err{min-height:1.2em;margin:0 0 10px;color:var(--err);font-size:.9rem}
+.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px}
+.links button{all:unset;cursor:pointer;color:var(--accent);text-decoration:underline;font-size:.9rem}
+.links button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div id="splash" role="dialog" aria-label="Welcome to Lyrical Bot">
+  <div class="sun"></div><div class="floor"></div><div class="notes" id="notes" aria-hidden="true"></div>
+  <div class="hero">
+    <div class="welcome">welcome to</div>
+    <h2 class="title" aria-label="Lyrical Bot"><span id="t1" aria-hidden="true"></span><span id="t2" aria-hidden="true"></span></h2>
+    <img id="heroImg" class="dance" alt="" draggable="false">
+    <p class="tag" id="tag" aria-hidden="true"></p>
+    <button id="start" class="startbtn" type="button">Press start</button>
+    <span class="hint">or hit Enter</span>
+  </div>
+</div>
+<header class="top"><img id="logo" class="logo" alt=""><h1>Lyrical Bot</h1></header>
+<main class="app">
+  <div class="side">
+    <section class="card pick">
+      <label for="song">Song</label>
+      <select id="song"></select>
+    </section>
+    <section class="card" id="acct" hidden>
+      <h2>Account</h2>
+      <div id="acctOut">
+        <p class="note">Log in to keep your songs and characters on every device.</p>
+        <div class="row2"><button class="btn" id="openLogin" type="button">Log in</button><button class="btn" id="openSignup" type="button">Create account</button></div>
+      </div>
+      <div id="acctIn" hidden>
+        <p class="note">Signed in as <strong id="who"></strong></p>
+        <div class="row2"><button class="btn" id="logout" type="button">Log out</button><button class="btn" id="delAcct" type="button">Delete account</button></div>
+      </div>
+      <div id="acctConnect" hidden>
+        <p class="note">Enter your Lyrical Bot server address to use accounts.</p>
+        <input type="text" id="srvUrl" placeholder="https://your-server.example.com" aria-label="Server address" autocomplete="off">
+        <button class="btn" id="srvGo" type="button">Connect</button>
+      </div>
+      <p id="acctmsg" class="note" role="status"></p>
+    </section>
+    <section class="card">
+      <h2>Characters</h2>
+      <div class="chars" id="chars"></div>
+      <div class="char">
+        <button class="btn" id="upload" type="button">Upload character</button>
+        <input type="file" id="file" accept="image/*" hidden>
+      </div>
+      <p id="charmsg" role="status">Any photo or image works. A PNG with a transparent background looks best.</p>
+    </section>
+    <section class="card">
+      <h2>Options</h2>
+      <label class="voice"><input type="checkbox" id="voice"> Read lines aloud (not included in recordings)</label>
+    </section>
+    <details class="card" id="add">
+      <summary>Add your own song</summary>
+      <input type="text" id="newTitle" placeholder="Song title" aria-label="Song title">
+      <textarea id="newLyrics" rows="6" placeholder="Paste lyrics, one line per row" aria-label="Lyrics, one line per row"></textarea>
+      <button class="btn" id="save" type="button">Save song</button>
+      <p id="msg"></p>
+    </details>
+  </div>
+
+  <section class="stagebox">
+    <canvas class="frame" id="frame" width="720" height="1280" role="img" aria-label="Lyrical Bot video frame. Click to sing the next line."></canvas>
+    <div class="sr" id="live" aria-live="polite"></div>
+    <div class="actions">
+      <button class="btn sing" id="sing" type="button">Sing</button>
+      <button class="btn rec" id="rec" type="button">Record</button>
+    </div>
+    <p id="recmsg" role="status"></p>
+    <div class="meta">
+      <span id="count"></span>
+      <div class="bar"><i id="fill"></i></div>
+      <button class="btn" id="reset" type="button">Restart</button>
+    </div>
+  </section>
+
+  <aside class="card out-card">
+    <h2>Your video</h2>
+    <div class="empty" id="empty">Hit Record, sing a few lines, then press Stop. Your clip shows up here.</div>
+    <div id="clipBox" hidden>
+      <video id="preview" controls playsinline muted></video>
+      <div class="row"><button class="btn" id="dl" type="button">Download video</button><button class="btn" id="discard" type="button">Discard</button></div>
+    </div>
+  </aside>
+</main>
+<dialog id="auth" aria-labelledby="authTitle">
+  <form id="authForm" novalidate>
+    <h3 id="authTitle"></h3>
+    <div id="authBody"></div>
+    <p class="err" id="authErr" role="alert"></p>
+    <div class="row2"><button class="btn primary" id="authGo" type="submit"></button><button class="btn" id="authCancel" type="button">Cancel</button></div>
+    <div class="links" id="authLinks"></div>
+  </form>
+</dialog>
+
+
+<script>
+const SONGS = [
+  {title:"Twinkle, Twinkle, Little Star", lines:[
+    "Twinkle, twinkle, little star,","How I wonder what you are!","Up above the world so high,","Like a diamond in the sky.","Twinkle, twinkle, little star,","How I wonder what you are!"]},
+  {title:"Row, Row, Row Your Boat", lines:[
+    "Row, row, row your boat,","Gently down the stream.","Merrily, merrily, merrily, merrily,","Life is but a dream."]},
+  {title:"Happy Birthday", lines:[
+    "Happy birthday to you,","Happy birthday to you,","Happy birthday, dear friend,","Happy birthday to you!"]},
+  {title:"Jingle Bells", lines:[
+    "Dashing through the snow,","In a one-horse open sleigh,","O’er the fields we go,","Laughing all the way.","Bells on bobtail ring,","Making spirits bright,","What fun it is to ride and sing","A sleighing song tonight!","Jingle bells, jingle bells,","Jingle all the way,","Oh, what fun it is to ride","In a one-horse open sleigh!"]},
+  {title:"Amazing Grace", lines:[
+    "Amazing grace, how sweet the sound,","That saved a wretch like me!","I once was lost, but now am found,","Was blind, but now I see."]},
+  {title:"Take Me Out to the Ball Game", lines:[
+    "Take me out to the ball game,","Take me out with the crowd;","Buy me some peanuts and Cracker Jack,","I don’t care if I never get back.","Let me root, root, root for the home team,","If they don’t win, it’s a shame.","For it’s one, two, three strikes, you’re out,","At the old ball game!"]},
+  {title:"Old MacDonald Had a Farm", lines:[
+    "Old MacDonald had a farm, E-I-E-I-O!","And on that farm he had a cow, E-I-E-I-O!","With a moo-moo here and a moo-moo there,","Here a moo, there a moo, everywhere a moo-moo,","Old MacDonald had a farm, E-I-E-I-O!"]}
+];
+let custom = [], acct = null, acctSongs = [];
+try { custom = JSON.parse(localStorage.getItem("lyricbot.custom") || "[]"); } catch (e) { custom = []; }
+const songs = () => SONGS.concat(custom, acctSongs);
+const $ = id => document.getElementById(id);
+const FW = 720, FH = 1280, S = 9, FONT = '700 54px "Pixelify Sans","Trebuchet MS",system-ui,sans-serif';
+const REDUCED = matchMedia("(prefers-reduced-motion:reduce)").matches;
+const cv = $("frame"), cx = cv.getContext("2d");
+const sprite = new Image(); sprite.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAA/CAYAAAC7KnXJAAACuElEQVR4nO2bS27CMBRFHWATHXSChCp1yJ4qdRNISCyDHTFgXjHrpINugSgdObpYfv48P39CfaRIgBPn+fr6E8co1ZkZat78dthPtt93p2uVuFY1bqoULYQvLSdVagALa3OBLz0lbxfFnYHBbo8XNY73+fs43qdxvE9YiBiXmOfGOqxaM9keL2RaiiBKPTridthPeLiuKyYGBoPBrtebh8/60Ofpc1MECaWIGLZ2jIVGdFPBgysIEpJH0WZiqy2z4BL5c0Wr1mdwCx9TUC2OWQlUHkWGVrOviBVBNyeOEGYMrvOyO0NyAhXaKdrOC3HJJjVAClMEDOLr/KPePl4UfjfBdBuc0QKv2Z2ug47xdthPu9N18IoRM6PjuMAmhP7dJwgXdAnGHNVMqMKaExo9P6DEowr5ff6dP79/vg7U8OuKhYOO02s1baGQm0s/Z7jyksjT7NhJZ2Bta0Goc10uSJlW2wKXzNPEWZMIVeucfkTqSTTVdaYzyGFG0tIS02kqJm7MtuckazORXGkyhzPukJi7GSpFzDNC7O/CpjoivawX2sH7mJ0h1UR8QuRCoimuMAOujTW1hKDiiEXs2aQFIVL7D9JaqT1zTVxN3pXmbGchhWtNCI3PGbZ4V2ZCjNVaFUIpd0xUGnlB6LuNFoVAYuIkO1CXQ5YiBBLSoQb3CTaWIkZo5XmHVmrusRQhELGXSKkTspqExs1a6VqqKD6qvTdpkWAxau2ZkEb09eJSm0jSPOM/0sUAuhhAkBjPPqRqujOALgbQxQC6GEAXA+hiAF0MoIsBdDGALgaHkI3oLdPURvolEC3Gkt3hI2p1PGcgORF7b+LK/NmIEiPXlsOcxKzFsKzv2hfeErGLUqI7dlsRhbs/TTT40uJI/0k4218slJJbOy3VP1WpuVRyOa7o37K4tNIX/Sv+AFCyIYbyiG+NAAAAAElFTkSuQmCC";
+let si = 0, li = -1, timer = null, full = "", typed = 0, wrapped = [], popT = -1e9;
+let recording = false, mr = null, chunks = [], take = null, takeUrl = null;
+
+function fillSelect(sel) {
+  $("song").innerHTML = "";
+  songs().forEach((s, i) => { const o = document.createElement("option"); o.value = i; o.textContent = s.title; $("song").appendChild(o); });
+  $("song").value = sel;
+}
+function speak(t) {
+  try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); u.pitch = 1.5; u.rate = .95; speechSynthesis.speak(u); } catch (e) {}
+}
+function wrap(t) {
+  if (!t) return [];
+  cx.font = FONT; const out = []; let cur = "";
+  for (const w of t.split(" ")) {
+    const tryL = cur ? cur + " " + w : w;
+    if (cx.measureText(tryL).width > FW - 152 && cur) { out.push(cur); cur = w; } else cur = tryL;
+  }
+  out.push(cur); return out;
+}
+function say(text) {
+  clearInterval(timer); full = text; typed = 0; wrapped = wrap(text); $("live").textContent = text;
+  const n = Array.from(text).length;
+  timer = setInterval(() => { typed++; if (typed >= n) clearInterval(timer); }, 24);
+  if (text && $("voice").checked) speak(text);
+}
+function progress() {
+  const n = songs()[si].lines.length;
+  $("count").textContent = li < 0 ? n + " lines" : "Line " + (li + 1) + " of " + n;
+  $("fill").style.width = (li < 0 ? 0 : (li + 1) / n * 100) + "%";
+}
+function pick(i) {
+  si = i; li = -1;
+  say(recording ? "" : "Click me or press Sing to hear “" + songs()[si].title + "”.");
+  progress();
+}
+function next() {
+  popT = performance.now();
+  const L = songs()[si].lines; li++;
+  if (li >= L.length) { li = -1; say(recording ? "" : "That’s the whole song! Click me to sing it again."); }
+  else say(L[li]);
+  progress();
+}
+
+function drawBubble() {
+  if (!wrapped.length) return;
+  const LH = 70, bw = FW - 80, bh = wrapped.length * LH + 50, by = 560 - bh;
+  cx.fillStyle = "#fff"; cx.beginPath(); cx.roundRect(40, by, bw, bh, 28); cx.fill();
+  cx.beginPath(); cx.moveTo(FW / 2 - 24, 556); cx.lineTo(FW / 2 + 24, 556); cx.lineTo(FW / 2, 592); cx.closePath(); cx.fill();
+  cx.fillStyle = "#171717"; cx.font = FONT; cx.textAlign = "left"; cx.textBaseline = "middle";
+  let left = typed;
+  wrapped.forEach((ln, i) => {
+    const ch = Array.from(ln), part = ch.slice(0, Math.max(0, left)).join("");
+    left -= ch.length + 1;
+    if (part) cx.fillText(part, (FW - cx.measureText(ln).width) / 2, by + 25 + LH * i + LH / 2);
+  });
+}
+function draw(now) {
+  cx.fillStyle = "#000"; cx.fillRect(0, 0, FW, FH);
+  const p = Math.min((now - popT) / 300, 1), K = [[0, 1, 1], [.3, 1.12, .84], [.6, .93, 1.1], [1, 1, 1]];
+  let sx = 1, sy = 1;
+  for (let i = 1; i < 4 && p < 1; i++) if (p <= K[i][0]) { const a = K[i - 1], b = K[i], u = (p - a[0]) / (b[0] - a[0]); sx = a[1] + (b[1] - a[1]) * u; sy = a[2] + (b[2] - a[2]) * u; break; }
+  const bob = REDUCED ? 0 : -14 * (0.5 - 0.5 * Math.cos(now / 2400 * 2 * Math.PI));
+  const im = charImg || sprite;
+  if (im.complete && im.naturalWidth) {
+    const k = charImg ? Math.min(640 / im.naturalWidth, 560 / im.naturalHeight) : S, w = im.naturalWidth * k, h = im.naturalHeight * k;
+    cx.save(); cx.translate(FW / 2, 1180 + bob); cx.scale(sx, sy); cx.imageSmoothingEnabled = !!charImg; cx.imageSmoothingQuality = "high"; cx.drawImage(im, -w / 2, -h, w, h); cx.restore();
+  }
+  drawBubble();
+  requestAnimationFrame(draw);
+}
+
+function recType() {
+  if (!window.MediaRecorder || !cv.captureStream) return null;
+  return ["video/mp4;codecs=avc1", "video/mp4", "video/webm;codecs=vp9", "video/webm;codecs=vp8", "video/webm"].find(t => MediaRecorder.isTypeSupported(t)) || "";
+}
+function setRecUI(on) {
+  $("rec").textContent = on ? "Stop" : "Record"; $("rec").classList.toggle("on", on); cv.classList.toggle("live", on);
+  $("recmsg").textContent = on ? "Recording. Press Sing to sing each line, then Stop." : "";
+}
+function discard() {
+  if (takeUrl) URL.revokeObjectURL(takeUrl);
+  take = null; takeUrl = null; $("preview").removeAttribute("src"); $("clipBox").hidden = true; $("empty").hidden = false;
+}
+function startRec() {
+  const type = recType();
+  if (type === null) { $("recmsg").textContent = "Recording isn’t supported here. Try Chrome, Edge, or the desktop app."; return; }
+  discard(); chunks = [];
+  mr = new MediaRecorder(cv.captureStream(30), type ? {mimeType: type, videoBitsPerSecond: 6e6} : {videoBitsPerSecond: 6e6});
+  mr.ondataavailable = e => { if (e.data.size) chunks.push(e.data); };
+  mr.onstop = finishRec;
+  recording = true; pick(si); mr.start(250); setRecUI(true);
+}
+function finishRec() {
+  recording = false; setRecUI(false); pick(si);
+  const blob = new Blob(chunks, {type: mr.mimeType || "video/webm"});
+  if (!blob.size) { $("recmsg").textContent = "Nothing was recorded. Try again."; return; }
+  take = {blob, ext: blob.type.includes("mp4") ? "mp4" : "webm"};
+  takeUrl = URL.createObjectURL(blob); $("preview").src = takeUrl; $("empty").hidden = true; $("clipBox").hidden = false;
+}
+async function saveTake() {
+  if (!take) return;
+  const name = "lyric-bot." + take.ext;
+  try {
+    const d = window.claude && await window.claude.use("downloads");
+    if (d) { await d.save({filename: name, data: take.blob}); return; }
+  } catch (e) { if (e && e.code === "declined") return; }
+  const a = document.createElement("a"); a.href = takeUrl; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+cv.addEventListener("click", next);
+$("sing").addEventListener("click", next);
+$("rec").addEventListener("click", () => { mr && mr.state === "recording" ? mr.stop() : startRec(); });
+$("dl").addEventListener("click", saveTake);
+$("discard").addEventListener("click", discard);
+$("song").addEventListener("change", e => pick(+e.target.value));
+$("reset").addEventListener("click", () => pick(si));
+$("save").addEventListener("click", async () => {
+  const lines = $("newLyrics").value.split("\n").map(s => s.trim()).filter(Boolean);
+  if (!lines.length) { $("msg").textContent = "Paste at least one line of lyrics."; $("newLyrics").focus(); return; }
+  const title = $("newTitle").value.trim() || "My song";
+  try {
+    if (acct) { const r = await api("/songs", {method: "POST", body: {title, lines}}); acctSongs.push({sid: r.id, title, lines}); }
+    else { custom.push({title, lines}); LS.set("lyricbot.custom", JSON.stringify(custom)); }
+  } catch (e) { $("msg").textContent = e.message; return; }
+  $("newTitle").value = ""; $("newLyrics").value = ""; $("msg").textContent = "";
+  const last = songs().length - 1;
+  fillSelect(last); pick(last); $("add").open = false;
+});
+
+fillSelect(0);
+pick(0);
+document.fonts.load(FONT).then(() => { wrapped = wrap(full); });
+requestAnimationFrame(draw);
+
+// ---- characters (library) ----
+const LS = {
+  get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set: (k, v) => { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } },
+  del: k => { try { localStorage.removeItem(k); } catch (e) {} }
+};
+let charImg = null, selId = "orange", chars = [];
+const HINT = $("charmsg").textContent;
+try { chars = JSON.parse(LS.get("lyricbot.chars") || "[]"); if (!Array.isArray(chars)) chars = []; } catch (e) { chars = []; }
+const oldChar = LS.get("lyricbot.char");
+if (oldChar) { chars.push({id: "l" + Date.now().toString(36), name: "My character", data: oldChar}); LS.del("lyricbot.char"); saveLocalChars(); }
+function saveLocalChars() {
+  if (!LS.set("lyricbot.chars", JSON.stringify(chars.filter(c => !c.sid)))) $("charmsg").textContent = "Couldn’t save on this device (storage is full).";
+}
+function setChar(img, data) {
+  charImg = img;
+  const h = $("heroImg"); if (h) { h.src = img ? data : sprite.src; h.style.imageRendering = img ? "auto" : "pixelated"; }
+}
+function renderChars() {
+  const box = $("chars"); box.innerHTML = "";
+  const mk = (id, name, src, deletable) => {
+    const d = document.createElement("div"); d.className = "tile" + (selId === id ? " on" : "");
+    const b = document.createElement("button"); b.type = "button"; b.title = name; b.setAttribute("aria-label", name + (selId === id ? " (selected)" : ""));
+    const im = document.createElement("img"); im.src = src; im.alt = ""; if (id === "orange") im.style.imageRendering = "pixelated";
+    b.appendChild(im); b.onclick = () => selectChar(id); d.appendChild(b);
+    if (deletable) { const x = document.createElement("button"); x.type = "button"; x.className = "x"; x.textContent = "×"; x.setAttribute("aria-label", "Delete " + name); x.onclick = () => removeChar(id); d.appendChild(x); }
+    box.appendChild(d);
+  };
+  mk("orange", "Orange guy", sprite.src, false);
+  chars.forEach(c => mk(c.id, c.name, c.data, true));
+}
+function selectChar(id, restore) {
+  const c = chars.find(x => x.id === id);
+  selId = c ? id : "orange";
+  if (!restore) LS.set("lyricbot.charSel", selId);
+  renderChars();
+  if (!c) return setChar(null);
+  const im = new Image(); im.onload = () => { if (selId === id) setChar(im, c.data); }; im.src = c.data;
+}
+async function addChar(name, data) {
+  let c;
+  if (acct) { const r = await api("/characters", {method: "POST", body: {name, data}}); c = {id: "s" + r.id, sid: r.id, name, data}; }
+  else {
+    if (chars.filter(x => !x.sid).length >= 8) throw new Error("This device holds 8 characters. Delete one, or log in to save more.");
+    c = {id: "l" + Date.now().toString(36) + Math.floor(Math.random() * 1e4), name, data};
+  }
+  chars.push(c); saveLocalChars(); selectChar(c.id);
+}
+async function removeChar(id) {
+  const c = chars.find(x => x.id === id); if (!c) return;
+  try { if (c.sid) await api("/characters/" + c.sid, {method: "DELETE"}); } catch (e) { $("charmsg").textContent = e.message; return; }
+  chars = chars.filter(x => x !== c); saveLocalChars();
+  if (selId === id) selectChar("orange"); else renderChars();
+}
+function loadChar(file) {
+  if (!file) return;
+  const url = URL.createObjectURL(file), raw = new Image();
+  raw.onerror = () => { URL.revokeObjectURL(url); $("charmsg").textContent = "Couldn’t read that file. Try a JPG, PNG, WebP, GIF or BMP image."; };
+  raw.onload = async () => {
+    URL.revokeObjectURL(url);
+    const m = Math.min(1, 900 / Math.max(raw.naturalWidth, raw.naturalHeight)), c = document.createElement("canvas");
+    c.width = Math.max(1, Math.round(raw.naturalWidth * m)); c.height = Math.max(1, Math.round(raw.naturalHeight * m));
+    c.getContext("2d").drawImage(raw, 0, 0, c.width, c.height);
+    let q = .9, data = c.toDataURL("image/webp", q);
+    while (data.length > 400000 && q > .3) { q -= .2; data = c.toDataURL("image/webp", q); }
+    const name = (file.name || "").replace(/\.[^.]+$/, "").slice(0, 40) || "My character";
+    try { await addChar(name, data); $("charmsg").textContent = HINT; } catch (e) { $("charmsg").textContent = e.message; }
+  };
+  raw.src = url;
+}
+$("upload").addEventListener("click", () => $("file").click());
+$("file").addEventListener("change", e => { loadChar(e.target.files[0]); e.target.value = ""; });
+$("heroImg").src = sprite.src; $("logo").src = sprite.src;
+renderChars(); selectChar(LS.get("lyricbot.charSel") || "orange", true);
+
+// ---- welcome screen ----
+(function () {
+  const sp = $("splash");
+  [["t1", "LYRICAL"], ["t2", "BOT"]].forEach(([id, w], k) => [...w].forEach((c, i) => {
+    const e = document.createElement("i"); e.textContent = c; e.style.setProperty("--i", i + k * 7); $(id).appendChild(e);
+  }));
+  const cols = ["#ff2d8d", "#25e6ff", "#ffd34d", "#b57bff"];
+  for (let i = 0; i < 24; i++) {
+    const n = document.createElement("span"); n.className = "note"; n.textContent = "♪♫♬♩"[i % 4];
+    n.style.cssText = "--x:" + Math.random() * 96 + "%;--s:" + (18 + Math.random() * 34) + "px;--d:" + (6 + Math.random() * 7) + "s;--dl:" + (-Math.random() * 10) + "s;--c:" + cols[i % 4];
+    $("notes").appendChild(n);
+  }
+  const line = "Pick a song. Poke the monster. Make a video."; let n = 0;
+  setTimeout(() => { const tg = $("tag"); if (!tg) return; const t = setInterval(() => { tg.textContent = line.slice(0, ++n); if (n >= line.length) clearInterval(t); }, 38); }, 1300);
+  function jingle() {
+    try {
+      const a = new (window.AudioContext || window.webkitAudioContext)();
+      [523, 659, 784, 1047, 784, 1047].forEach((f, i) => {
+        const o = a.createOscillator(), g = a.createGain(), t = a.currentTime + i * .09;
+        o.type = "square"; o.frequency.value = f;
+        g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.12, t + .01); g.gain.exponentialRampToValueAtTime(.0001, t + .14);
+        o.connect(g); g.connect(a.destination); o.start(t); o.stop(t + .15);
+      });
+    } catch (e) {}
+  }
+  function go() {
+    if (sp.classList.contains("out")) return;
+    sp.classList.add("out"); jingle(); document.removeEventListener("keydown", onKey);
+    setTimeout(() => { sp.remove(); $("sing").focus(); }, 650);
+  }
+  function onKey(e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } }
+  $("start").addEventListener("click", go); document.addEventListener("keydown", onKey); $("start").focus();
+})();
+
+// ---- accounts ----
+const DEFAULT_SERVER = "";   // put your server address here to bake it into the app, e.g. "https://lyricbot.example.com"
+let token = LS.get("lyricbot.token");
+function apiBase() {
+  return (LS.get("lyricbot.server") || DEFAULT_SERVER || (/^https?:$/.test(location.protocol) ? location.origin : "")).replace(/\/+$/, "");
+}
+async function api(path, o = {}) {
+  const base = apiBase(); if (!base) throw new Error("No server set up.");
+  const headers = {}; if (o.body) headers["Content-Type"] = "application/json"; if (token) headers.Authorization = "Bearer " + token;
+  let r;
+  try { r = await fetch(base + "/api" + path, {method: o.method || "GET", headers, body: o.body ? JSON.stringify(o.body) : undefined}); }
+  catch (e) { throw new Error("Can’t reach the server. Check your connection."); }
+  let j = {}; try { j = await r.json(); } catch (e) {}
+  if (!r.ok) throw Object.assign(new Error(j.error || "Something went wrong."), {status: r.status});
+  return j;
+}
+function showAcct() { $("acctOut").hidden = !!acct; $("acctIn").hidden = !acct; if (acct) $("who").textContent = acct.username; }
+function refreshLib() {
+  const keep = si < SONGS.length ? si : 0;
+  fillSelect(keep); pick(keep); renderChars();
+  const w = LS.get("lyricbot.charSel"); selectChar(w && chars.some(c => c.id === w) ? w : "orange", true);
+}
+async function loadLibrary() {
+  const lib = await api("/library");
+  acctSongs = lib.songs.map(s => ({sid: s.id, title: s.title, lines: s.lines}));
+  chars = chars.filter(c => !c.sid).concat(lib.characters.map(c => ({id: "s" + c.id, sid: c.id, name: c.name, data: c.data})));
+}
+async function migrateLocal() {   // move what was saved on this device into the account
+  let moved = 0; const remap = {};
+  for (const sg of custom.slice()) {
+    try { await api("/songs", {method: "POST", body: {title: sg.title, lines: sg.lines}}); custom.splice(custom.indexOf(sg), 1); moved++; } catch (e) { break; }
+  }
+  LS.set("lyricbot.custom", JSON.stringify(custom));
+  for (const c of chars.filter(x => !x.sid)) {
+    try { const r = await api("/characters", {method: "POST", body: {name: c.name, data: c.data}}); remap[c.id] = "s" + r.id; chars = chars.filter(x => x !== c); moved++; } catch (e) { break; }
+  }
+  saveLocalChars();
+  const w = LS.get("lyricbot.charSel"); if (w && remap[w]) LS.set("lyricbot.charSel", remap[w]);
+  return moved;
+}
+async function signedIn(r) {
+  token = r.token; LS.set("lyricbot.token", token); acct = {username: r.user.username};
+  $("auth").close(); $("acctmsg").textContent = "";
+  let moved = 0;
+  try { moved = await migrateLocal(); await loadLibrary(); } catch (e) { $("acctmsg").textContent = e.message; }
+  showAcct(); refreshLib();
+  if (moved) $("acctmsg").textContent = "Moved " + moved + " item" + (moved === 1 ? "" : "s") + " from this device into your account.";
+}
+function signedOut() {
+  token = null; LS.del("lyricbot.token"); acct = null; acctSongs = []; chars = chars.filter(c => !c.sid);
+  showAcct(); refreshLib(); $("acctmsg").textContent = "";
+}
+
+const dlg = $("auth"); let ctx = {};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;"}[c]));
+const F = (name, label, type, extra) => "<label>" + label + "<input name=\"" + name + "\" type=\"" + type + "\" " + (extra || "") + "></label>";
+const post = (p, body) => api(p, {method: "POST", body});
+const STEPS = {
+  login: {title: "Log in", btn: "Log in",
+    html: () => F("login", "Username or email", "text", "autocomplete=\"username\"") + F("pw", "Password", "password", "autocomplete=\"current-password\""),
+    links: [["Create account", () => { ctx.mode = "signup"; go("email"); }], ["Forgot password?", () => { ctx.mode = "reset"; go("email"); }]],
+    submit: async f => signedIn(await post("/auth/login", {login: f.login, password: f.pw}))},
+  email: {title: () => ctx.mode === "reset" ? "Reset password" : "Create account", btn: "Send code",
+    html: () => F("email", "Email", "email", "autocomplete=\"email\"") + "<p class=\"note\">We’ll email you a 6-digit code.</p>",
+    links: [["I already have an account", () => go("login")]],
+    submit: async f => { await post("/auth/request-code", {email: f.email}); ctx.email = f.email.trim(); go("code"); }},
+  code: {title: "Check your email", btn: "Verify",
+    html: () => "<p class=\"note\">We sent a 6-digit code to <b>" + esc(ctx.email) + "</b>. It expires in 10 minutes.</p>" + F("code", "Code", "text", "inputmode=\"numeric\" maxlength=\"6\" autocomplete=\"one-time-code\""),
+    links: [["Send a new code", async () => { try { await post("/auth/request-code", {email: ctx.email}); go("code", "New code sent."); } catch (e) { $("authErr").textContent = e.message; } }], ["Use a different email", () => go("email")]],
+    submit: async f => { const r = await post("/auth/verify-code", {email: ctx.email, code: f.code}); ctx.ticket = r.ticket; go(r.existing ? "reset" : "newuser"); }},
+  newuser: {title: "Pick your username", btn: "Create account",
+    html: () => F("username", "Username (3 to 20 letters, numbers or _)", "text", "autocomplete=\"username\" maxlength=\"20\"") + F("pw", "Password (8+ characters)", "password", "autocomplete=\"new-password\""),
+    submit: async f => signedIn(await post("/auth/complete", {ticket: ctx.ticket, username: f.username, password: f.pw}))},
+  reset: {title: "Set a new password", btn: "Save password",
+    html: () => "<p class=\"note\">That email already has an account.</p>" + F("pw", "New password (8+ characters)", "password", "autocomplete=\"new-password\""),
+    submit: async f => signedIn(await post("/auth/complete", {ticket: ctx.ticket, password: f.pw}))},
+  del: {title: "Delete account", btn: "Delete my account", danger: true,
+    html: () => "<p class=\"note\">This permanently deletes your account, songs and characters from the server.</p>" + F("pw", "Password", "password", "autocomplete=\"current-password\""),
+    submit: async f => { await api("/me", {method: "DELETE", body: {password: f.pw}}); dlg.close(); signedOut(); }}
+};
+function go(step, note) {
+  ctx.step = step; const S = STEPS[step];
+  $("authTitle").textContent = typeof S.title === "function" ? S.title() : S.title;
+  $("authBody").innerHTML = (note ? "<p class=\"note\">" + note + "</p>" : "") + S.html();
+  $("authGo").textContent = S.btn; $("authGo").className = "btn " + (S.danger ? "danger" : "primary");
+  $("authErr").textContent = ""; $("authLinks").innerHTML = "";
+  (S.links || []).forEach(([label, fn]) => { const b = document.createElement("button"); b.type = "button"; b.textContent = label; b.onclick = fn; $("authLinks").appendChild(b); });
+  const first = $("authBody").querySelector("input"); if (first) setTimeout(() => first.focus(), 0);
+}
+function openAuth(step, mode) { ctx = {mode}; go(step); if (!dlg.open) dlg.showModal(); }
+$("authForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = Object.fromEntries(new FormData(e.target));
+  if (Object.values(f).some(v => !String(v).trim())) { $("authErr").textContent = "Please fill in every field."; return; }
+  $("authGo").disabled = true;
+  try { await STEPS[ctx.step].submit(f); } catch (err) { $("authErr").textContent = err.message; }
+  $("authGo").disabled = false;
+});
+$("authCancel").addEventListener("click", () => dlg.close());
+$("openLogin").addEventListener("click", () => openAuth("login"));
+$("openSignup").addEventListener("click", () => openAuth("email", "signup"));
+$("delAcct").addEventListener("click", () => openAuth("del"));
+$("logout").addEventListener("click", () => { api("/auth/logout", {method: "POST"}).catch(() => {}).then(signedOut); });
+
+async function probe(base) {
+  const ac = new AbortController(), t = setTimeout(() => ac.abort(), 4000);
+  try { const r = await fetch(base + "/api/health", {signal: ac.signal}); return !!(await r.json()).ok; } catch (e) { return false; } finally { clearTimeout(t); }
+}
+async function initAccounts() {
+  const base = apiBase(), isFile = location.protocol === "file:";
+  if (!(base && await probe(base))) {   // no server: hide accounts on the web, offer a server box in the desktop app
+    if (isFile) { $("acct").hidden = false; $("acctOut").hidden = true; $("acctConnect").hidden = false; $("acctmsg").textContent = base ? "Couldn’t reach " + base + "." : ""; }
+    return;
+  }
+  $("acct").hidden = false; $("acctConnect").hidden = true; $("acctmsg").textContent = "";
+  if (token) {
+    try { const me = await api("/me"); acct = {username: me.username}; const moved = await migrateLocal(); await loadLibrary(); refreshLib(); if (moved) $("acctmsg").textContent = "Moved " + moved + " item" + (moved === 1 ? "" : "s") + " from this device into your account."; }
+    catch (e) { if (e.status === 401) { token = null; LS.del("lyricbot.token"); } }
+  }
+  showAcct();
+}
+$("srvGo").addEventListener("click", async () => {
+  let u = $("srvUrl").value.trim(); if (!u) return;
+  if (!/^https?:\/\//i.test(u)) u = "https://" + u;
+  try { u = new URL(u).origin; } catch (e) { $("acctmsg").textContent = "That doesn’t look like a web address."; return; }
+  LS.set("lyricbot.server", u); $("acctmsg").textContent = "Connecting…"; await initAccounts();
+});
+initAccounts();
+</script>
+</body>
+</html>
